@@ -12,3 +12,7 @@
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
+
+button:focus, :focus {
+  outline: none !important;
+}
