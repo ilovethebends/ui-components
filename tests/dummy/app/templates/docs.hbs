@@ -1,8 +1,10 @@
 {{#docs-viewer as |viewer|}}
 
   {{#viewer.nav as |nav|}}
-    {{nav.item 'Introduction' 'docs.index'}}
-    {{nav.item 'Usage' 'docs.usage'}}
+    {{nav.section 'Components'}}
+    {{#nav.subnav as |nav|}}
+      {{nav.item 'UI Menu List' 'docs.ui-menu-list'}}
+    {{/nav.subnav}}
   {{/viewer.nav}}
 
   {{#viewer.main}}

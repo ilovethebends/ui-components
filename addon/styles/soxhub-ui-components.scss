@@ -1,0 +1,10 @@
+$ember-basic-dropdown-content-z-index: 9000;
+$ember-basic-dropdown-content-background-color: transparent;
+@import "ember-basic-dropdown";
+@import "utils";
+
+.vat {
+  vertical-align: top;
+}
+
+.di { display: inline; }

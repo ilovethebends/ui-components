@@ -1,0 +1,7 @@
+{{#basic-dropdown horizontalPosition=horizontalPosition as |dd|}}
+  {{yield (hash
+    trigger=(component dd.trigger)
+    content=(component dd.content)
+    actions=dd.actions
+  )}}
+{{/basic-dropdown}}

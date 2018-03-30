@@ -1,0 +1,29 @@
+{{!-- BEGIN-SNIPPET demo-menu-list-sizes.hbs --}}
+{{#docs-demo as |demo|}}
+  {{#demo.example name='demo-menu-list-sizes.hbs'}}
+    {{#ui-menu-list style=size size=size class="dib" as |menu|}}
+      {{menu.listItem title="All Comments"}}
+      {{menu.listItem title="Controls"}}
+      {{menu.listItem title="Tests"}}
+      {{menu.listItem title="Narratives"}}
+      {{menu.listItem title="Issues"}}
+      {{menu.listItem title="Workstream"}}
+      {{menu.listItem title="OpsAudits"}}
+      {{menu.listItem title="Closed Comments"}}
+    {{/ui-menu-list}}
+
+    <br>
+
+    <button onclick={{action (mut size) 'small'}} class='docs-btn'>
+      Small
+    </button>
+    <button onclick={{action (mut size) 'medium'}} class='docs-btn'>
+      Medium
+    </button>
+    <button onclick={{action (mut size) 'large'}} class='docs-btn'>
+      Large
+    </button>
+  {{/demo.example}}
+  {{demo.snippet 'demo-menu-list-sizes.hbs'}}
+{{/docs-demo}}
+{{!-- END-SNIPPET --}}

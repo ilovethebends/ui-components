@@ -1,0 +1,32 @@
+{{!-- BEGIN-SNIPPET ui-menu-dropdown.hbs --}}
+{{#basic-dropdown horizontalPosition=horizontalPosition as |dd|}}
+  {{yield (hash
+    trigger=(component dd.trigger)
+    content=(component dd.content)
+    actions=dd.actions
+  )}}
+{{/basic-dropdown}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET demo-menu-list.hbs --}}
+{{#docs-demo as |demo|}}
+  {{#demo.example name='demo-menu-list.hbs'}}
+    <ul class="list">
+      {{#ui-menu-dropdown horizontalPosition="center" as |dd|}}
+        {{#dd.trigger}}
+          {{ui-breadcrumbs-menu-trigger title=selectedItem}}
+        {{/dd.trigger}}
+        {{#dd.content class="m-t-10"}}
+          {{#ui-menu-list click=(action dd.actions.close) as |menu|}}
+            {{#each menuItems as |item|}}
+              {{menu.listItem title=item click=(action (mut selectedItem) item)}}
+            {{/each}}
+          {{/ui-menu-list}}
+        {{/dd.content}}
+      {{/ui-menu-dropdown}}
+    </ul>
+  {{/demo.example}}
+  {{demo.snippet 'demo-menu-list.hbs' label='Dropdown'}}
+  {{demo.snippet 'ui-menu-dropdown.hbs' label='UI Menu Dropdown'}}
+{{/docs-demo}}
+{{!-- END-SNIPPET --}}
