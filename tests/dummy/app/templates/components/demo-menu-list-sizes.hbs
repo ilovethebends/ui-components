@@ -1,16 +1,31 @@
 {{!-- BEGIN-SNIPPET demo-menu-list-sizes.hbs --}}
 {{#docs-demo as |demo|}}
   {{#demo.example name='demo-menu-list-sizes.hbs'}}
-    {{#ui-menu-list style=size size=size class="dib" as |menu|}}
-      {{menu.listItem title="All Comments"}}
-      {{menu.listItem title="Controls"}}
-      {{menu.listItem title="Tests"}}
-      {{menu.listItem title="Narratives"}}
-      {{menu.listItem title="Issues"}}
-      {{menu.listItem title="Workstream"}}
-      {{menu.listItem title="OpsAudits"}}
-      {{menu.listItem title="Closed Comments"}}
-    {{/ui-menu-list}}
+    <div class="dib">
+
+      {{#ui-menu-list style=size size=size class="dib" as |menu|}}
+        {{menu.listItem title="All Comments"}}
+        {{menu.listItem title="Controls"}}
+        {{menu.listItem title="Tests"}}
+      {{/ui-menu-list}}
+
+    </div>
+
+    <div class="dib">
+
+      {{#ui-menu-list style=size size=size class="dib" as |menu|}}
+        {{#menu.listItem}}
+          <i class="material-icons">picture_as_pdf</i>All Comments
+        {{/menu.listItem}}
+        {{#menu.listItem}}
+          <i class="material-icons">attach_file</i>Attach File
+        {{/menu.listItem}}
+        {{#menu.listItem}}
+          <i class="material-icons">mail</i>Mail
+        {{/menu.listItem}}
+      {{/ui-menu-list}}
+
+    </div>
 
     <br>
 

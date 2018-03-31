@@ -11,7 +11,8 @@
 {{!-- BEGIN-SNIPPET demo-menu-list.hbs --}}
 {{#docs-demo as |demo|}}
   {{#demo.example name='demo-menu-list.hbs'}}
-    <ul class="list">
+    <ul class="list dib">
+
       {{#ui-menu-dropdown horizontalPosition="center" as |dd|}}
         {{#dd.trigger}}
           {{ui-breadcrumbs-menu-trigger title=selectedItem}}
@@ -20,6 +21,24 @@
           {{#ui-menu-list click=(action dd.actions.close) as |menu|}}
             {{#each menuItems as |item|}}
               {{menu.listItem title=item click=(action (mut selectedItem) item)}}
+            {{/each}}
+          {{/ui-menu-list}}
+        {{/dd.content}}
+      {{/ui-menu-dropdown}}
+
+      
+    </ul>
+    <ul class="list dib">
+      {{#ui-menu-dropdown horizontalPosition="center" as |dd|}}
+        {{#dd.trigger}}
+          {{ui-breadcrumbs-menu-trigger title=selectedBlock}}
+        {{/dd.trigger}}
+        {{#dd.content class="m-t-10"}}
+          {{#ui-menu-list click=(action dd.actions.close) as |menu|}}
+            {{#each blockItems as |item|}}
+              {{#menu.listItem click=(action (mut selectedBlock) item)}}
+                <i class="material-icons">picture_as_pdf</i><span>{{item}}</span>
+              {{/menu.listItem}}
             {{/each}}
           {{/ui-menu-list}}
         {{/dd.content}}
