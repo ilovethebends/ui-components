@@ -18,6 +18,8 @@
           {{ui-breadcrumbs-menu-trigger title=selectedItem}}
         {{/dd.trigger}}
         {{#dd.content class="m-t-10"}}
+
+          <!-- This is using inline "title" attribute -->
           {{#ui-menu-list click=(action dd.actions.close) as |menu|}}
             {{#each menuItems as |item|}}
               {{menu.listItem title=item click=(action (mut selectedItem) item)}}
@@ -25,8 +27,6 @@
           {{/ui-menu-list}}
         {{/dd.content}}
       {{/ui-menu-dropdown}}
-
-      
     </ul>
     <ul class="list dib">
       {{#ui-menu-dropdown horizontalPosition="center" as |dd|}}
@@ -34,6 +34,8 @@
           {{ui-breadcrumbs-menu-trigger title=selectedBlock}}
         {{/dd.trigger}}
         {{#dd.content class="m-t-10"}}
+
+        <!-- This is using a block to wrap several inline elements -->
           {{#ui-menu-list click=(action dd.actions.close) as |menu|}}
             {{#each blockItems as |item|}}
               {{#menu.listItem click=(action (mut selectedBlock) item)}}
